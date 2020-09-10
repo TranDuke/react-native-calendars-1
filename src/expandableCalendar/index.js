@@ -418,7 +418,7 @@ class ExpandableCalendar extends Component {
         style={[this.style.header, { height: HEADER_HEIGHT, top: this.state.headerDeltaY }]}
         pointerEvents={'none'}
       >
-        <Text allowFontScaling={false} style={this.style.headerTitle}>{`${this.props.callMonth} ${month} - ${year}`}</Text>
+        <Text allowFontScaling={false} style={[this.style.headerTitle, this.props.headerTitleStyle]}>{`${this.props.callMonth} ${month} - ${year}`}</Text>
         {this.renderWeekDaysNames()}
       </Animated.View>
     );
@@ -525,7 +525,7 @@ class ExpandableCalendar extends Component {
             />
             {horizontal && this.renderWeekCalendar()}
             {!hideKnob && this.renderKnob()}
-            {!horizontal && this.renderHeader()}
+            {this.renderHeader()}
           </Animated.View>
         }
       </View>
