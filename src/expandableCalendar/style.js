@@ -35,7 +35,7 @@ export default function styleConstructor(theme = {}) {
       bottom: 0,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: 'transparent'
+      backgroundColor: appStyle.calendarBackground
     },
     knob: {
       width: 40,
