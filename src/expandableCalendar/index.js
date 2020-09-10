@@ -411,18 +411,19 @@ class ExpandableCalendar extends Component {
 
   renderHeader() {
     const monthYear = XDate(this.props.context.date).toString('MMMM yyyy');
-
+    const [month, year] = monthYear.split(' ');
     return (
       <Animated.View
         ref={e => this.header = e}
         style={[this.style.header, { height: HEADER_HEIGHT, top: this.state.headerDeltaY }]}
         pointerEvents={'none'}
       >
-        <Text allowFontScaling={false} style={this.style.headerTitle}>{monthYear}</Text>
+        <Text allowFontScaling={false} style={this.style.headerTitle}>{`${this.props.callMonth} ${month} - ${year}`}</Text>
         {this.renderWeekDaysNames()}
       </Animated.View>
     );
   }
+
 
   renderWeekCalendar() {
     const { position } = this.state;
