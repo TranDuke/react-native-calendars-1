@@ -487,7 +487,7 @@ class ExpandableCalendar extends Component {
     const themeObject = Object.assign(this.headerStyleOverride, theme);
 
     return (
-      <View testID={this.props.testID} style={[allowShadow && this.style.containerShadow, style]}>
+      <View testID={this.props.testID} style={style}>
         {screenReaderEnabled ?
           <Calendar
             testID="calendar"
@@ -525,7 +525,7 @@ class ExpandableCalendar extends Component {
             />
             {horizontal && this.renderWeekCalendar()}
             {!hideKnob && this.renderKnob()}
-            {this.renderHeader()}
+            {/* {this.renderHeader()} */}
           </Animated.View>
         }
       </View>
