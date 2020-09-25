@@ -403,7 +403,7 @@ class ExpandableCalendar extends Component {
         ]}
       >
         {weekDaysNames.map((day, index) => (
-          <Text allowFontScaling={false} key={day + index} style={this.style.weekday} numberOfLines={1}>{day}</Text>
+          <Text allowFontScaling={false} key={day + index} style={this.style.weekday} numberOfLines={1}></Text>
         ))}
       </View>
     );
@@ -419,6 +419,7 @@ class ExpandableCalendar extends Component {
         pointerEvents={'none'}
       >
         <Text allowFontScaling={false} style={[this.style.headerTitle, this.props.headerTitleStyle]}>{`${this.props.callMonth} ${month} - ${year}`}</Text>
+        {this.renderWeekDaysNames()}
       </Animated.View>
     );
   }
