@@ -1,10 +1,10 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import * as defaultStyle from '../../style';
 
 const STYLESHEET_ID = 'stylesheet.dot';
 
-export default function styleConstructor(theme={}) {
-  const appStyle = {...defaultStyle, ...theme};
+export default function styleConstructor(theme = {}) {
+  const appStyle = { ...defaultStyle, ...theme };
   return StyleSheet.create({
     dot: {
       width: 4,
@@ -16,7 +16,7 @@ export default function styleConstructor(theme={}) {
     },
     visibleDot: {
       opacity: 1,
-      backgroundColor: appStyle.dotColor
+      backgroundColor: 'rgb(47,172,79)'
     },
     selectedDot: {
       backgroundColor: appStyle.selectedDotColor
@@ -25,7 +25,7 @@ export default function styleConstructor(theme={}) {
       backgroundColor: appStyle.disabledDotColor || appStyle.dotColor
     },
     todayDot: {
-      backgroundColor: appStyle.todayDotColor || appStyle.dotColor
+      backgroundColor: 'rgb(47,172,79)' || appStyle.dotColor
     },
     ...(theme[STYLESHEET_ID] || {})
   });

@@ -1,11 +1,11 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import * as defaultStyle from '../../style';
 
 const STYLESHEET_ID = 'stylesheet.agenda.list';
 
 export default function styleConstructor(theme = {}) {
-  const appStyle = {...defaultStyle, ...theme};
-  return  StyleSheet.create({
+  const appStyle = { ...defaultStyle, ...theme };
+  return StyleSheet.create({
     container: {
       flexDirection: 'row'
     },
@@ -30,7 +30,7 @@ export default function styleConstructor(theme = {}) {
       marginTop: 32
     },
     today: {
-      color: appStyle.agendaTodayColor
+      color: 'rgb(47,172,79)'
     },
     ...(theme[STYLESHEET_ID] || {})
   });
